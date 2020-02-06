@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Workshop YWP 2020</title>
+    <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="./static/css/slides.css">
+      <link rel="stylesheet" href="./static/css/font-awesome.min.css">
+      <style>
+        @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+        @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+        body { font-family: 'Droid Serif'; }
+        h1, h2, h3 {
+            font-family: 'Yanone Kaffeesatz';
+            font-weight: normal;
+        }
+        .section_background {background-color:#c2c444; color: #fff}
+        .subsection_background {background-color:#e87837; color: #fff}
+        .exercise_background {background-color:#ececec; color: #000}
+        .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Tidy your data
+### unleash the power of data science tools
+
+https://github.com/stijnvanhoey/workshop_ywp20
+
+YWP workshop, 13 February 2020
+
+Stijn Van Hoey
+
+<a href="https://twitter.com/svanhoey"><i class="fa fa-twitter" aria-hidden="true"></i> @SVanHoey</a>
+<a href="https://github.com/stijnvanhoey"><i class="fa fa-github" aria-hidden="true"></i> stijnvanhoey</a>
+
+![:scale 20%](./static/img/logo_fluves.jpg)
+
+
+---
+class: center, middle
+
+TODO
+
+<div class="alert alert-info">
+    <a href="https://hackmd.io/EeFtcKlCRN6s2R6eoNA2Ww" target="_blank">https://hackmd.io/EeFtcKlCRN6s2R6eoNA2Ww</a>
+</div>
+
+![:scale 100%](./img/InnoScholComm_figure_jan2015.png)
+
+---
+class: center, middle, section_background
+
+# Introduction
+
+---
+class: left, middle
+
+## Previously [@Biomath](http://www.biomath.ugent.be/)...
+<br>
+
+.center[
+![:scale 80%](./img/biomath_intro.png)]
+
+---
+class: left, middle
+
+## Currently [@Fluves](https://www.fluves.com/)
+<br>
+
+.center[
+![:scale 80%](./img/)]
+
+---
+class: center, middle
+
+ADD FLUVES INTRO
+
+---
+class: center, middle
+
+## Trying to do things
+## `reproducible` and `open`
+### data, code, analysis, publications,...
+
+---
+class: center, middle
+
+# but let's be honest...
+
+![:scale 80%](./img/postit.jpg)
+
+---
+
+# I've been...
+
+--
+count: false
+
+* ...creating files with names like `analysis_final_bis2.xslx`, `analysis_final_FINAL_bis2.xslx`,...
+
+--
+count: false
+
+* ...sending mails to myself with `latest version` of data/scripts
+
+--
+count: false
+
+* ...lost a couple of days work due to a bad `backup`-strategy, nevertheless my *dropbox, google drive, USB and HDD strategic combination*
+
+--
+count: false
+
+* ...running > 10 different modelling/experimental scenario's by `changing parameters/inputs manually`
+
+--
+count: false
+
+* ...commenting out sections in my `scripts` to run individual scenario's
+
+--
+count: false
+
+* ...manually `copy-pasting` data from different spreadsheets into a single one
+
+--
+count: false
+
+* ...`unable to understand my own` work/code/analysis
+
+---
+background-image: url(./img/philosoraptor-there-must-be-a-better-way.jpg)
+
+---
+class: center, middle, section_background
+
+# Reproducibility
+
+---
+class: center, middle
+background-image: url(./img/selfish_reproduce.png)
+
+.footnote[Markowetz Genome Biology (2015) 16:274 <br> DOI 10.1186/s13059-015-0850-7]
+
+---
+class: center, middle
+background-image: url(./img/selfish_reproduce_alpha.png)
+
+<div class="alert alert-success">
+    <h2>Do it for your future self, a couple of days/weeks/months from now...</h2>
+</div>
+
+---
+class: center, middle
+background-image: url(./img/InnoScholComm_figure_jan2015.png)
+
+---
+class: center, middle
+count: false
+background-image: url(./img/InnoScholComm_figure_jan2015.png)
+
+<div class="alert alert-warning">
+    <h2>Tools, tools, tools...</h2>
+</div>
+
+---
+class: center, middle
+background-image: url(./img/best_practices_computational_science.png)
+
+<div class="alert alert-success">
+    <h2>best practices >>> tools</h2>
+</div>
+
+.footnote[Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et al. (2014) <br>Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. doi:10.1371/journal.pbio.1001745]
+
+---
+class: center, middle
+background-image: url(./img/good_enough_practices_computational_science.png)
+
+.footnote[Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L., Teal, T., Wilson, G. (2016). <br> Good Enough Practices for Scientific Computing, 1–30.]
+
+--
+count: false
+
+<div class="alert alert-success">
+    <h3>This afternoon,<br> we'll focus on one of the <br> fundamentals</h3>
+</div>
+
+---
+class: center, middle, subsection_background
+
+# Tidy your data
+
+---
+class: left, middle
+.emphasize[Data `organization` is the foundation<br> of your research project]
+
+---
+class: center, middle
+
+.emphasize.left[
+<i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>Data that is easy to model,<br> visualise and aggregate
+]
+<br><br><br><br>
+
+.emphasize.right[
+<i class="fa fa-quote-left fa-3x fa-pull-right" aria-hidden="true"></i>Create the data you wish<br> to see in the world
+]
+
+---
+class: center, middle
+background-image: url(./img/tidy-data_paper.png)
+
+.footnote[Hadley Wickham, Tidy Data, Vol. 59, Issue 10, Sep 2014,<br> Journal of Statistical Software. doi:10.18637/jss.v059.i10]
+
+---
+class: center, middle
+
+## un-tidy
+
+| WWTP | Treatment A | Treatment B |
+|:------|-------------|-------------|
+| Destelbergen | 8.  | 6.3 |
+| Landegem | 7.5  | 5.2 |
+| Dendermonde | 8.3  | 6.2 |
+| Eeklo | 6.5  | 7.2 |
+
+--
+
+## tidy
+
+| WWTP | Treatment | pH |
+|:------|:-------------:|:-------------:|
+| Destelbergen | A  | 8. |
+| Landegem | A  | 7.5 |
+| Dendermonde | A  | 8.3 |
+| Eeklo | A  | 6.5 |
+| Destelbergen | B  | 6.3 |
+| Landegem | B  | 5.2 |
+| Dendermonde | B  | 6.2 |
+| Eeklo | B  | 7.2 |
+
+---
+class: left, middle
+count: false
+
+.center[## tidy]
+<br>
+
+<div class="alert alert-success">
+    <ul>
+      <li>Each <code>variable</code> forms a <b>column</b> and contains <code>values</code></li>
+      <li>Each <code>observation</code> forms a <b>row</b></li>
+        <li>Each type of <code>observational unit</code> forms a <b>table</b>.</li>
+    </ul>
+</div>
+
+<br>
+
+| WWTP | Treatment | pH |
+|:------|:-------------:|:-------------:|
+| Destelbergen | A  | 8. |
+| Landegem | A  | 7.5 |
+| Dendermonde | A  | 8.3 |
+| Eeklo | A  | 6.5 |
+| Destelbergen | B  | 6.3 |
+| Landegem | B  | 5.2 |
+| Dendermonde | B  | 6.2 |
+| Eeklo | B  | 7.2 |
+
+---
+class: center, middle
+background-image: url(./img/spreadsheet_example.png)
+
+
+---
+class: center, middle
+background-image: url(./img/spreadsheet_example.png)
+count: false
+
+<div class="alert alert-info">
+    <h2>You need to do a study over the different study plots and field seasons...</h2>
+</div>
+
+---
+class: center, middle
+
+Get the data here:<br> https://ndownloader.figshare.com/files/2252083
+
+<br><br>
+<div class="alert alert-info">
+With the person next to you, identify what is <code>wrong</code> with this spreadsheet. Also discuss the steps you would need to take to clean up the 2013 and 2014 tabs, and to put them all together in one spreadsheet as a tidy data set.
+</div>
+
+<a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/" target="_blank">Check this page</a> when you need inspiration...
+
+---
+class: left, middle
+
+.emphasize.center[Working with spreadsheets...]
+<div class="alert alert-warning">
+<h3>Remember: </h3>
+    <ul>
+        <li>NEVER modify your <b>raw</b> data!</li>
+        <li><b>Keep track</b> of all of the steps you take to clean your data</li>
+        <li>Organize your data according to <b>tidy data</b> principles</li>
+        <li>Save your data as an <a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/05-exporting-data/" target="_blank">open and static format</a> such as <code>csv</code></li>
+    </ul>
+</div>
+
+---
+class: left, middle
+
+.emphasize.center[Working with spreadsheets...]
+<div class="alert alert-warning">
+<h3>Remember: </h3>
+    <ul>
+        <li><strike>NEVER modify</strike>Do <b>not overwrite</b> your <b>raw</b> data!</li>
+        <li><strike><b>Keep track</b> of</strike> <b>Document</b> all of the steps you take to clean your data</li>
+        <li>Organize your data according to <b>tidy data</b> principles</li>
+        <li>Save your data as an <a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/05-exporting-data/" target="_blank">open and static format</a> such as <code>csv</code></li>
+    </ul>
+</div>
+
+---
+class: center, middle, subsection_background
+
+# Tidy data analysis and visualisation
+
+---
+class: center, middle
+
+.emphasize.center[Scripting **with** tidy data]
+
+TODO: switch with binder approach
+
+![:scale 10%](http://blog.jupyter.org/content/images/2015/02/jupyter-sq-text.png)
+
+<a href="https://github.com/stijnvanhoey/workshop_ywp17/blob/master/src/tidy_introduction_example.ipynb" target="_blank">Scripting with tidy data showcase</a>
+
+
+---
+class: center, middle
+
+# Jupyter notebook?!?
+
+![:scale 30%](http://blog.jupyter.org/content/images/2015/02/jupyter-sq-text.png)
+![:scale 30%](http://3.bp.blogspot.com/-z3gtVOQ8sr4/UOwWB7hlA_I/AAAAAAAAAQE/0a5_c4oKvN4/s1600/RStudio_markdown.png)
+
+.emphasize.left[
+<i class="fa fa-quote-left fa-5x fa-pull-left" aria-hidden="true"></i>... in literate programming the emphasis<br> is
+reversed. Instead of writing code containing documentation,<br> the literate programmer writes<br> `documentation containing code`.
+]
+
+---
+class: left, middle
+
+.emphasize.center[How to get this rollin'...?!?]
+<div class="alert alert-warning">
+    <ul>
+        <li>Pick an open source, high level language such as R/Python/..., focus on data-science packages</li>
+        <ul>
+            <li>When R, check the <a href="http://tidyverse.org/" target="_blank">tidyverse</a> packages</li>
+            <li>When Python, check the <a href="http://pandas.pydata.org/" target="_blank">Pandas</a> package and the <a href="http://www.scipy-lectures.org/index.html" target="_blank">Scientific lecture notes</a>
+
+            </li>
+        </ul>
+        <li>Pick a proper environment to code (NOT notepad)</li>
+        <ul>
+            <li>When R, use <a href="https://www.rstudio.com/" target="_blank">Rstudio</a></li>
+            <li>When Python, use <a href="https://www.continuum.io/downloads" target="_blank">Anaconda (Jupyter notebook, Spyder,...)</a></li>
+        </ul>
+    </ul>
+</div>
+
+---
+class: center, middle
+background-image: url(./img/good_enough_practices_computational_science.png)
+
+.footnote[Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L., Teal, T., Wilson, G. (2016). <br> Good Enough Practices for Scientific Computing, 1–30.]
+
+---
+class: left, middle
+
+## More?
+
+* [Data carpentry](http://www.datacarpentry.org/lessons/) and [Software carpentry](https://software-carpentry.org/lessons/) courses
+* Doctoral schools Ugent [data manipulation course](https://github.com/jorisvandenbossche/DS-python-data-analysis)
+* ROpensci [reproducibility guide](http://ropensci.github.io/reproducibility-guide/)
+* Many resources [enlisted](https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Recursos.Rmd)...
+
+
+</textarea>
+
+
+    <script src="./static/js/remark.min.js"></script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+    <script>
+        remark.macros["scale"] = function (percentage) {
+          var url = this;
+          return '<img src="' + url + '" style="width: ' + percentage + '" />';
+      };
+      var slideshow = remark.create();
+    </script>
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- jQuery library -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- Latest compiled JavaScript -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  </body>
+</html>

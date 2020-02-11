@@ -42,15 +42,6 @@ Stijn Van Hoey
 
 
 ---
-class: center, middle
-
-TODO
-
-<div class="alert alert-info">
-    <a href="https://hackmd.io/EeFtcKlCRN6s2R6eoNA2Ww" target="_blank">https://hackmd.io/EeFtcKlCRN6s2R6eoNA2Ww</a>
-</div>
-
----
 class: center, middle, section_background
 
 # Who
@@ -82,128 +73,26 @@ class: left, middle
 ## Currently - Freelance developer and teacher
 
 .center[
-![:scale 80%](./static/img/intro_teaching_1.png)
-![:scale 80%](./static/img/intro_teaching_2.png)]
-
----
-class: center, middle
-
-## Trying to do things
-## `reproducible` and `open`
-### data, code, analysis, publications,...
-
----
-class: center, middle
-
-# but let's be honest...
-
-![:scale 80%](./img/postit.jpg)
-
----
-
-# I've been...
-
---
-count: false
-
-* ...creating files with names like `analysis_final_bis2.xslx`, `analysis_final_FINAL_bis2.xslx`,...
-
---
-count: false
-
-* ...sending mails to myself with `latest version` of data/scripts
-
---
-count: false
-
-* ...lost a couple of days work due to a bad `backup`-strategy, nevertheless my *dropbox, google drive, USB and HDD strategic combination*
-
---
-count: false
-
-* ...running > 10 different modelling/experimental scenario's by `changing parameters/inputs manually`
-
---
-count: false
-
-* ...commenting out sections in my `scripts` to run individual scenario's
-
---
-count: false
-
-* ...manually `copy-pasting` data from different spreadsheets into a single one
-
---
-count: false
-
-* ...`unable to understand my own` work/code/analysis
-
----
-background-image: url(./img/philosoraptor-there-must-be-a-better-way.jpg)
+![:scale 90%](./static/img/intro_teaching.png)]
 
 ---
 class: center, middle, section_background
 
-# Reproducibility
+# Motivation
 
 ---
-class: center, middle
-background-image: url(./img/selfish_reproduce.png)
+class: middle, center
 
-.footnote[Markowetz Genome Biology (2015) 16:274 <br> DOI 10.1186/s13059-015-0850-7]
-
----
-class: center, middle
-background-image: url(./img/selfish_reproduce_alpha.png)
-
-<div class="alert alert-success">
-    <h2>Do it for your future self, a couple of days/weeks/months from now...</h2>
-</div>
-
----
-class: center, middle
-background-image: url(./img/InnoScholComm_figure_jan2015.png)
-
----
-class: center, middle
-count: false
-background-image: url(./img/InnoScholComm_figure_jan2015.png)
-
-<div class="alert alert-warning">
-    <h2>Tools, tools, tools...</h2>
-</div>
-
----
-class: center, middle
-background-image: url(./img/best_practices_computational_science.png)
-
-<div class="alert alert-success">
-    <h2>best practices >>> tools</h2>
-</div>
-
-.footnote[Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et al. (2014) <br>Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. doi:10.1371/journal.pbio.1001745]
-
----
-class: center, middle
-background-image: url(./img/good_enough_practices_computational_science.png)
+.center[![:scale 100%](./static/img/good_enough_practices_computational_science.png)]
 
 .footnote[Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L., Teal, T., Wilson, G. (2016). <br> Good Enough Practices for Scientific Computing, 1–30.]
 
---
-count: false
-
-<div class="alert alert-success">
-    <h3>This afternoon,<br> we'll focus on one of the <br> fundamentals</h3>
-</div>
-
 ---
-class: center, middle, subsection_background
+class: middle, center
 
-# Tidy your data
+.center[![:scale 100%](./static/img/good_enough_practices_computational_science_sec4.png)]
 
----
-class: left, middle
-.emphasize[Data `organization` is the foundation<br> of your research project]
+.footnote[Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L., Teal, T., Wilson, G. (2016). <br> Good Enough Practices for Scientific Computing, 1–30.]
 
 ---
 class: center, middle
@@ -211,22 +100,27 @@ class: center, middle
 .emphasize.left[
 <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>Data that is easy to model,<br> visualise and aggregate
 ]
-<br><br><br><br>
+
+--
+count: false
 
 .emphasize.right[
 <i class="fa fa-quote-left fa-3x fa-pull-right" aria-hidden="true"></i>Create the data you wish<br> to see in the world
 ]
 
 ---
-class: center, middle
-background-image: url(./img/tidy-data_paper.png)
+class: center, middle, section_background
 
-.footnote[Hadley Wickham, Tidy Data, Vol. 59, Issue 10, Sep 2014,<br> Journal of Statistical Software. doi:10.18637/jss.v059.i10]
+# Tidy your data
 
 ---
 class: center, middle
+background-image: url(./static/img/tidy_data_paper.png)
 
-## un-tidy
+.footnote[Wickham, H. (2014) <br> Tidy Data, Vol. 59, Issue 10, <br> Journal of Statistical Software. doi:10.18637/jss.v059.i10]
+
+---
+class: center, middle
 
 | WWTP | Treatment A | Treatment B |
 |:------|-------------|-------------|
@@ -235,37 +129,8 @@ class: center, middle
 | Dendermonde | 8.3  | 6.2 |
 | Eeklo | 6.5  | 7.2 |
 
---
-
-## tidy
-
-| WWTP | Treatment | pH |
-|:------|:-------------:|:-------------:|
-| Destelbergen | A  | 8. |
-| Landegem | A  | 7.5 |
-| Dendermonde | A  | 8.3 |
-| Eeklo | A  | 6.5 |
-| Destelbergen | B  | 6.3 |
-| Landegem | B  | 5.2 |
-| Dendermonde | B  | 6.2 |
-| Eeklo | B  | 7.2 |
-
 ---
-class: left, middle
-count: false
-
-.center[## tidy]
-<br>
-
-<div class="alert alert-success">
-    <ul>
-      <li>Each <code>variable</code> forms a <b>column</b> and contains <code>values</code></li>
-      <li>Each <code>observation</code> forms a <b>row</b></li>
-        <li>Each type of <code>observational unit</code> forms a <b>table</b>.</li>
-    </ul>
-</div>
-
-<br>
+class: center, middle
 
 | WWTP | Treatment | pH |
 |:------|:-------------:|:-------------:|
@@ -280,136 +145,136 @@ count: false
 
 ---
 class: center, middle
-background-image: url(./img/spreadsheet_example.png)
 
-
----
-class: center, middle
-background-image: url(./img/spreadsheet_example.png)
-count: false
-
-<div class="alert alert-info">
-    <h2>You need to do a study over the different study plots and field seasons...</h2>
-</div>
-
----
-class: center, middle
-
-Get the data here:<br> https://ndownloader.figshare.com/files/2252083
-
-<br><br>
-<div class="alert alert-info">
-With the person next to you, identify what is <code>wrong</code> with this spreadsheet. Also discuss the steps you would need to take to clean up the 2013 and 2014 tabs, and to put them all together in one spreadsheet as a tidy data set.
-</div>
-
-<a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/" target="_blank">Check this page</a> when you need inspiration...
-
----
-class: left, middle
-
-.emphasize.center[Working with spreadsheets...]
-<div class="alert alert-warning">
-<h3>Remember: </h3>
-    <ul>
-        <li>NEVER modify your <b>raw</b> data!</li>
-        <li><b>Keep track</b> of all of the steps you take to clean your data</li>
-        <li>Organize your data according to <b>tidy data</b> principles</li>
-        <li>Save your data as an <a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/05-exporting-data/" target="_blank">open and static format</a> such as <code>csv</code></li>
-    </ul>
-</div>
-
----
-class: left, middle
-
-.emphasize.center[Working with spreadsheets...]
-<div class="alert alert-warning">
-<h3>Remember: </h3>
-    <ul>
-        <li><strike>NEVER modify</strike>Do <b>not overwrite</b> your <b>raw</b> data!</li>
-        <li><strike><b>Keep track</b> of</strike> <b>Document</b> all of the steps you take to clean your data</li>
-        <li>Organize your data according to <b>tidy data</b> principles</li>
-        <li>Save your data as an <a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/05-exporting-data/" target="_blank">open and static format</a> such as <code>csv</code></li>
-    </ul>
-</div>
+.center[![:scale 100%](./static/img/tidy_data_scheme.png)]
 
 ---
 class: center, middle, subsection_background
 
-# Tidy data analysis and visualisation
+# Action!
 
 ---
 class: center, middle
 
-.emphasize.center[Scripting **with** tidy data]
+Download the [untidy data](https://github.com/stijnvanhoey/workshop_ywp20/raw/master/data/data_messy.xls)
 
-TODO: switch with binder approach
+.center[![:scale 80%](./static/img/spreadsheet_messy_data.png)]
 
-Python?
+---
+class: left
 
-[![Binder](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/stijnvanhoey/workshop_ywp20/master?urlpath=lab)
+Data from [research paper](https://www.hindawi.com/journals/jchem/2019/5405016/):
 
-R?
+> Seasonal and Spatial Variation of Dissolved Oxygen and Nutrients in Padaviya Reservoir, Sri Lanka
 
+Water quality (vertical distribution) data in Padaviya Reservoir, an ancient man-made irrigation reservoir. The original data is
+available on [figshare](https://figshare.com/articles/Padaviya_Reservoir_Water_Quality_Data_-_2016/8971775), but was _mistreated_ for
+the sake of this workshop...
 
+.center[![:scale 60%](./static/img/waterquality_data_paper.png)]
 
-![:scale 10%](http://blog.jupyter.org/content/images/2015/02/jupyter-sq-text.png)
+.footnote[Siriwardana, C., Cooray, A. T., Liyanage, S. S. and Koliyabandara, S. M. P. A. (2019), <br>
+Seasonal and Spatial Variation of Dissolved Oxygen and Nutrients in Padaviya Reservoir, Sri Lanka. <br>
+Journal of Chemistry, Vol. 2019, doi.org/10.1155/2019/5405016.]
 
-<a href="https://github.com/stijnvanhoey/workshop_ywp17/blob/master/src/tidy_introduction_example.ipynb" target="_blank">Scripting with tidy data showcase</a>
+---
+class: left, middle
 
+## Exercise
+
+Starting from the [`data_messy.xls`](https://github.com/stijnvanhoey/workshop_ywp20/raw/master/data/data_messy.xls):
+
+1. Download the [untidy data](https://github.com/stijnvanhoey/workshop_ywp20/raw/master/data/data_messy.xls)
+2. Open up the data in a spreadsheet program
+3. You can see two tabs, from measurements in January and in May
+4. Work together with the person next to you. Identify what is wrong with this spreadsheet (take note)
+and transform the data to a single tidy data set.
+
+__Tip:__
+
+- Never modify your original (raw) data!
+- Keep track of the steps you took in your clean up
 
 ---
 class: center, middle
 
-# Jupyter notebook?!?
 
-![:scale 30%](http://blog.jupyter.org/content/images/2015/02/jupyter-sq-text.png)
-![:scale 30%](http://3.bp.blogspot.com/-z3gtVOQ8sr4/UOwWB7hlA_I/AAAAAAAAAQE/0a5_c4oKvN4/s1600/RStudio_markdown.png)
+...
 
-.emphasize.left[
-<i class="fa fa-quote-left fa-5x fa-pull-left" aria-hidden="true"></i>... in literate programming the emphasis<br> is
-reversed. Instead of writing code containing documentation,<br> the literate programmer writes<br> `documentation containing code`.
+
+---
+class: left, middle
+
+### Remember:
+
+* __Never modify your raw data__. Always make a copy before making any changes.
+* __Keep track__ of all of the steps you take to clean your data in a plain text file.
+* Save your data as an [__open and static format__](http://www.datacarpentry.org/spreadsheet-ecology-lesson/05-exporting-data/) such as csv.
+* Organize your data according to __tidy data__ principles.
+
+.footnote[__Note:__ This lesson is a derivative of the
+[data carpentry spreadsheet workshop](https://datacarpentry.org/spreadsheet-ecology-lesson/01-format-data/index.html). All credits
+to the data carpentry community!
 ]
+
+---
+class: center, middle, section_background
+
+# Tidy data visualisation
+
+---
+class: center, middle, subsection_background
+
+# Action!
+
+---
+class: center, middle
+
+Click on the launch button:
+
+[![:scale 50%](https://mybinder.org/badge_logo.svg)](http://mybinder.org/v2/gh/stijnvanhoey/workshop_ywp20/master?urlpath=lab)
+
+Wait (_fingers crossed_) until you see:
+
+.center[![:scale 80%](./static/img/jupyter_intro.png)]
+
+---
+class: center, middle
+
+In the left menu: first, double click `src`; next, double click `visualisations.ipynb`. You should see:
+
+![:scale 80%](./static/img/jupyter_notebook.png)
 
 ---
 
 TODO: add rule of the coding club (but bit altered)
 
-
 ---
+class: center, middle, section_background
 
-
-Added value of tidy
-- When your data consists of only 1 factor variable, such as ... e added value of using a grammar of graphics approach is LOW.
-- When working with timeseries data from sensors or continuous logging, such as ... the added value of using a grammar of graphics approach is LOW.
-- When working with different experiments, different conditions, (factorial) experimental designs, such as ...  the added value of using a grammar of graphics approach is HIGH. Represent you're data tidy to achieve maximal benefit!
-
-
----
-class: left, middle
-
-.emphasize.center[How to get this rollin'...?!?]
-<div class="alert alert-warning">
-    <ul>
-        <li>Pick an open source, high level language such as R/Python/..., focus on data-science packages</li>
-        <ul>
-            <li>When R, check the <a href="http://tidyverse.org/" target="_blank">tidyverse</a> packages</li>
-            <li>When Python, check the <a href="http://pandas.pydata.org/" target="_blank">Pandas</a> package and the <a href="http://www.scipy-lectures.org/index.html" target="_blank">Scientific lecture notes</a>
-
-            </li>
-        </ul>
-        <li>Pick a proper environment to code (NOT notepad)</li>
-        <ul>
-            <li>When R, use <a href="https://www.rstudio.com/" target="_blank">Rstudio</a></li>
-            <li>When Python, use <a href="https://www.continuum.io/downloads" target="_blank">Anaconda (Jupyter notebook, Spyder,...)</a></li>
-        </ul>
-    </ul>
-</div>
+# To conclude
 
 ---
 class: center, middle
-background-image: url(./img/good_enough_practices_computational_science.png)
 
-.footnote[Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L., Teal, T., Wilson, G. (2016). <br> Good Enough Practices for Scientific Computing, 1–30.]
+## Tidy and GoG all the way?
+
+> When only 1 categorical variable or timeseries (continuous logging), the added value is LOW.
+
+| ID | variable 1 | variable 2 |
+|----|-------------| ---- |
+| 1 | 0.2 | 0.8 |
+| 2 | 0.3 | 0.1 |
+| ...  | ... | ... |
+
+| datetime | station 1 | station 2 |
+|------------|-------------| ---- |
+| 2017-12-20 17:50 | 0.2 | 0.8 |
+| 2017-12-20 17:51 | 0.3 | 0.1 |
+| ...  | ... | ... |
+
+> When working with different experiments, different conditions, (factorial) experimental designs,
+the added value is HIGH.
 
 ---
 class: left, middle
@@ -417,13 +282,36 @@ class: left, middle
 ## More?
 
 * [Data carpentry](http://www.datacarpentry.org/lessons/) and [Software carpentry](https://software-carpentry.org/lessons/) courses
-* Doctoral schools Ugent [data manipulation course](https://github.com/jorisvandenbossche/DS-python-data-analysis)
+* Doctoral schools Ghent University [data manipulation course](https://github.com/jorisvandenbossche/DS-python-data-analysis)
 * ROpensci [reproducibility guide](http://ropensci.github.io/reproducibility-guide/)
-* Many resources [enlisted](https://github.com/ecoinfAEET/Reproducibilidad/blob/master/Recursos.Rmd)...
+* ...
+
+---
+class: center, middle
+
+.center[![:scale 100%](./static/img/good_enough_practices_computational_science.png)]
+
+---
+class: center, middle
+
+.center[![:scale 100%](./static/img/best_practices_computational_science.png)]
+
+---
+class: center, middle, section_background
+
+https://github.com/stijnvanhoey/workshop_ywp20
+
+YWP workshop, 13 February 2020
+
+Stijn Van Hoey
+
+<a href="https://twitter.com/svanhoey"><i class="fa fa-twitter" aria-hidden="true"></i> @SVanHoey</a>
+<a href="https://github.com/stijnvanhoey"><i class="fa fa-github" aria-hidden="true"></i> stijnvanhoey</a>
+
+![:scale 20%](./static/img/logo_fluves.jpg)
 
 
 </textarea>
-
 
     <script src="./static/js/remark.min.js"></script>
     <script>
@@ -436,11 +324,5 @@ class: left, middle
       };
       var slideshow = remark.create();
     </script>
-    <!-- Latest compiled and minified CSS -->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
-    <!-- jQuery library -->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-    <!-- Latest compiled JavaScript -->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   </body>
 </html>
